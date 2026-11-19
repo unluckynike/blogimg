@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif">
+<rect width="1100" height="430" fill="white"/>
+<text x="270" y="42" text-anchor="middle" font-size="20" font-weight="bold" fill="#1d4ed8">注意力：开卷考试</text>
+<text x="830" y="42" text-anchor="middle" font-size="20" font-weight="bold" fill="#166534">Mamba：一页笔记的闭卷考试</text>
+<rect x="40" y="70" width="460" height="250" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="270" y="100" text-anchor="middle" font-size="15" fill="#1e3a5f">历史 token 逐字保留（KV cache）</text>
+<rect x="70" y="120" width="76" height="26" rx="5" fill="#dbeafe" stroke="#60a5fa"/><text x="108" y="138" text-anchor="middle" font-size="12.5" fill="#1e3a5f">t1</text>
+<rect x="154" y="120" width="76" height="26" rx="5" fill="#dbeafe" stroke="#60a5fa"/><text x="192" y="138" text-anchor="middle" font-size="12.5" fill="#1e3a5f">t2</text>
+<rect x="238" y="120" width="76" height="26" rx="5" fill="#dbeafe" stroke="#60a5fa"/><text x="276" y="138" text-anchor="middle" font-size="12.5" fill="#1e3a5f">t3</text>
+<rect x="322" y="120" width="76" height="26" rx="5" fill="#dbeafe" stroke="#60a5fa"/><text x="360" y="138" text-anchor="middle" font-size="12.5" fill="#1e3a5f">…</text>
+<rect x="406" y="120" width="76" height="26" rx="5" fill="#dbeafe" stroke="#60a5fa"/><text x="444" y="138" text-anchor="middle" font-size="12.5" fill="#1e3a5f">tN</text>
+<text x="270" y="182" text-anchor="middle" font-size="14.5" fill="#334155">任意历史 token 均可精确回查</text>
+<text x="270" y="208" text-anchor="middle" font-size="14.5" fill="#dc2626">代价：训练 O(N²) · KV cache 随长度无限增长</text>
+<path d="M 150 250 h 240" stroke="#dc2626" stroke-width="3" marker-end="url(#r)"/>
+<text x="270" y="280" text-anchor="middle" font-size="13" fill="#dc2626">上下文越长，显存账单越大</text>
+<rect x="600" y="70" width="460" height="250" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+<rect x="745" y="130" width="170" height="96" rx="10" fill="white" stroke="#22c55e" stroke-width="2"/>
+<text x="830" y="160" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">固定大小的状态 h</text>
+<text x="830" y="182" text-anchor="middle" font-size="12.5" fill="#475569">与上下文长度无关</text>
+<text x="830" y="204" text-anchor="middle" font-size="12.5" fill="#475569">选择性：写入什么、淡忘什么</text>
+<path d="M 640 200 h 100" stroke="#22c55e" stroke-width="2.5" marker-end="url(#g)"/>
+<text x="672" y="190" text-anchor="middle" font-size="12.5" fill="#166534">新 token</text>
+<path d="M 918 200 h 100" stroke="#22c55e" stroke-width="2.5" marker-end="url(#g)"/>
+<text x="968" y="190" text-anchor="middle" font-size="12.5" fill="#166534">输出</text>
+<text x="830" y="258" text-anchor="middle" font-size="14.5" fill="#334155">状态是历史的有损压缩：省内存，但细节会淡忘</text>
+<text x="830" y="284" text-anchor="middle" font-size="14.5" fill="#166534">训练 O(N) · 推理状态恒定</text>
+<rect x="40" y="348" width="1020" height="56" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="550" y="382" text-anchor="middle" font-size="15.5" fill="#334155">一个记全部原文但越记越贵；一个只记一页笔记便宜到永远——混合架构想同时拿到两者</text>
+<defs>
+<marker id="r" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0 0 L10 3.5 L0 7 z" fill="#dc2626"/></marker>
+<marker id="g" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0 0 L10 3.5 L0 7 z" fill="#166534"/></marker>
+</defs>
+</svg>
